@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="form.css">
+        <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png">
+        <title>Contact Form</title>
+    </head>
+    <body>
+        <main>
+            <h2>Contact Us</h2>
+            
+                <form id="contactForm" class="grid-container" >
+                 <div class="container"> 
+                    <label for="fname">First Name*</label><br>
+                    <input type="text" id="name" name="fname" required><br><br>
+                 </div>
+                 <div>
+                    <label for="lname">Last name*</label><br>
+                    <input type="text" id="name" name="lname" required><br><br>
+                 </div>
+                </form>
+            
+                <form>
+                    <label for="email">Email Address*</label><br><br>
+                    <input type="email" id="email" name="email" required><br><br>
+                </form>
+
+                <label for="query">Query Type*</label><br><br>
+                <form class="query-container">
+                    <div>
+                        <input type="radio" id="radio" name="query">                   
+                        <label for="query">General Enquiry</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio" name="query" checked="checked">
+                        <label for="query">Support Request</label><br><br>
+                    </div>
+                   
+                </form>
+            
+            <form id="messageForm">
+                <label for="text">Message *</label><br><br>
+                <input type="text" id="message" name="text" placeholder="Type something..."><br><br>
+
+                <input type="checkbox" name="checkbox" required >
+                <label for="checkbox">I hereby consent to being contacted by the team* </label><br><br>
+
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </main>
+        <script>
+             document.getElementById('messageForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thanks for completing the form. Well be in touch soon! ');
+    });  
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+                let form = event.target;
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    alert('Please fill out all required fields.');
+                }
+            });
+        </script>
+        
+    </body>
+
+
+</html>
